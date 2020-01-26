@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:splashscreen/splashscreen.dart';
+
+void main() { runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: new Scora(),
+      )
+    );
+}
+
+class Scora extends StatefulWidget {
+  @override
+  _ScoraState createState() => _ScoraState();
+}
+
+class _ScoraState extends State<Scora> {
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen(
+      seconds: 10,
+      backgroundColor: Colors.amberAccent,
+      image: Image.asset('images/AOR-association.jpg'),
+      loaderColor: Colors.redAccent,
+      photoSize: 200.0,
+      navigateAfterSeconds: MainScreen(),
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Directories'),
+        ),
+    );
+  }
+}
+
